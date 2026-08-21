@@ -1,0 +1,308 @@
+/* Transcripta Midnight Gold Editorial — deep navy canvas, restrained gold signals, Arabic-first hierarchy. */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.9rem;
+  --background: oklch(0.13 0.028 245);
+  --foreground: oklch(0.95 0.02 90);
+  --card: oklch(0.17 0.03 245);
+  --card-foreground: oklch(0.95 0.02 90);
+  --popover: oklch(0.17 0.03 245);
+  --popover-foreground: oklch(0.95 0.02 90);
+  --primary: oklch(0.79 0.16 83);
+  --primary-foreground: oklch(0.16 0.03 245);
+  --secondary: oklch(0.2 0.035 245);
+  --secondary-foreground: oklch(0.82 0.02 90);
+  --muted: oklch(0.23 0.03 245);
+  --muted-foreground: oklch(0.68 0.025 90);
+  --accent: oklch(0.79 0.16 83);
+  --accent-foreground: oklch(0.16 0.03 245);
+  --destructive: oklch(0.63 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.79 0.16 83);
+  --chart-1: oklch(0.79 0.16 83);
+  --chart-2: oklch(0.56 0.12 238);
+  --chart-3: oklch(0.7 0.12 150);
+  --chart-4: oklch(0.62 0.16 30);
+  --chart-5: oklch(0.75 0.04 90);
+  --sidebar: oklch(0.16 0.03 245);
+  --sidebar-foreground: oklch(0.95 0.02 90);
+  --sidebar-primary: oklch(0.79 0.16 83);
+  --sidebar-primary-foreground: oklch(0.16 0.03 245);
+  --sidebar-accent: oklch(0.23 0.03 245);
+  --sidebar-accent-foreground: oklch(0.95 0.02 90);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.79 0.16 83);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; font-family: "Cairo", sans-serif; }
+  button:not(:disabled), a[href] { @apply cursor-pointer; }
+}
+
+@layer components {
+  .font-display { font-family: "Space Grotesk", "Cairo", sans-serif; }
+  .eyebrow { @apply text-xs font-bold tracking-[.16em] text-[#e8b94d]; }
+  .section-title { font-family: "Space Grotesk", "Cairo", sans-serif; @apply text-4xl font-extrabold leading-[1.12] tracking-tight text-[#f4f0e8] sm:text-6xl; }
+  .section-title span { @apply text-[#e8b94d]; }
+  .text-gold-gradient { background: linear-gradient(110deg, #f4d47e 4%, #e8b94d 48%, #af741e 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .container { width: 100%; margin-inline: auto; padding-inline: 1.25rem; }
+  @media (min-width: 1024px) { .container { max-width: 1280px; padding-inline: 2rem; } }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  section > div { animation: rise-in .7s cubic-bezier(.23,1,.32,1) both; }
+}
+@keyframes rise-in { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Transcripta light-mode override: preserves the Midnight Gold accent while
+   translating the editorial navy surfaces into a warm ivory canvas. */
+.theme-light {
+  background-color: #f7f3ea;
+  color: #172235;
+}
+
+.theme-light header.bg-transparent,
+.theme-light header.bg-\[\#07111f\]\/90 {
+  color: #172235;
+}
+
+.theme-light [class*="bg-\\[\\#07111f\\]"],
+.theme-light [class*="bg-\\[\\#0a1828\\]"],
+.theme-light [class*="bg-\\[\\#0b1b2d\\]"] {
+  background-color: #fffdf8 !important;
+}
+
+.theme-light [class*="text-\\[\\#f4f0e8\\]"],
+.theme-light [class*="text-\\[\\#e6e2da\\]"],
+.theme-light [class*="text-\\[\\#e8f0f4\\]"] {
+  color: #172235 !important;
+}
+
+.theme-light [class*="text-\\[\\#c9c6bd\\]"],
+.theme-light [class*="text-\\[\\#a7a59e\\]"],
+.theme-light [class*="text-\\[\\#b8b5ad\\]"],
+.theme-light [class*="text-\\[\\#8b929b\\]"] {
+  color: #5c6470 !important;
+}
+
+.theme-light [class*="border-white\/10"],
+.theme-light [class*="border-white\/15"] {
+  border-color: rgba(23, 34, 53, .14) !important;
+}
+
+.theme-light [class*="bg-\\[\\#07111f\\]\\/55"],
+.theme-light [class*="bg-\\[\\#07111f\\]\\/75"],
+.theme-light [class*="bg-\\[\\#07111f\\]\\/80"] {
+  background-color: rgba(255, 253, 248, .9) !important;
+}
+
+.theme-light .theme-toggle {
+  background: rgba(232, 185, 77, .12);
+}
+
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  color: #172235 !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .theme-toggle svg { transition: transform 180ms cubic-bezier(.23, 1, .32, 1); }
+  .theme-toggle:hover svg { transform: rotate(-12deg) scale(1.08); }
+}
+
+/* Theme polish: a short cross-fade keeps the switch readable without slowing navigation. */
+.theme-transition,
+.theme-transition header,
+.theme-transition section,
+.theme-transition article,
+.theme-transition input,
+.theme-transition select,
+.theme-transition textarea {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.theme-light .theme-hero-overlay {
+  background: radial-gradient(circle at 72% 36%, rgba(198, 141, 35, .16), transparent 30%), linear-gradient(115deg, rgba(247, 243, 234, .98) 18%, rgba(247, 243, 234, .86) 58%, rgba(247, 243, 234, .68));
+}
+
+.theme-light .theme-hero-image {
+  opacity: .2;
+  mix-blend-mode: multiply;
+  filter: saturate(.78) sepia(.08) contrast(.94);
+}
+
+.theme-light .theme-hero-fade {
+  background: linear-gradient(to top, #f7f3ea, transparent);
+}
+
+.theme-light .theme-hero-card {
+  border-color: rgba(175, 116, 30, .35);
+  background: rgba(255, 253, 248, .78);
+  box-shadow: 0 22px 60px rgba(23, 34, 53, .12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition,
+  .theme-transition header,
+  .theme-transition section,
+  .theme-transition article,
+  .theme-transition input,
+  .theme-transition select,
+  .theme-transition textarea {
+    transition: none;
+  }
+}
+
+/* Full light-mode surface polish for the selector, pricing, samples, quote form, and notices. */
+.theme-light .theme-picker,
+.theme-light .theme-select {
+  color: #7a5517 !important;
+}
+
+.theme-light .theme-select {
+  background-color: transparent !important;
+}
+
+.theme-light .theme-select option {
+  background: #fffdf8;
+  color: #172235;
+}
+
+.theme-light [class*="bg-white/["] {
+  background-color: rgba(23, 34, 53, .035) !important;
+}
+
+.theme-light [class*="text-[#07111f]"] {
+  color: #172235 !important;
+}
+
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  background-color: #fffdf8 !important;
+  border-color: rgba(23, 34, 53, .18) !important;
+}
+
+.theme-light [class*="shadow-[0_22px_60px"] {
+  box-shadow: 0 22px 60px rgba(23, 34, 53, .12) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-transition,
+  .theme-transition * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+
+/* Section-specific light theme tuning: keeps the editorial gold system readable across the full page. */
+.theme-light .theme-day-samples {
+  background: #f4f1e9;
+  border-color: rgba(7, 17, 31, 0.12);
+}
+
+.theme-light .theme-day-samples article,
+.theme-light .theme-day-samples > div > div > div:last-child {
+  background: #fffdf8;
+  border-color: rgba(7, 17, 31, 0.12);
+}
+
+.theme-light .theme-day-samples .bg-\[\#07111f\],
+.theme-light .theme-day-samples .bg-\[\#0b1b2d\] {
+  background: #fffdf8;
+}
+
+.theme-light .theme-day-samples .text-\[\#f4f0e8\],
+.theme-light .theme-day-samples .text-\[\#e6e2da\] {
+  color: #172435;
+}
+
+.theme-light .theme-day-samples .text-\[\#a7a59e\],
+.theme-light .theme-day-samples .text-\[\#8b929b\] {
+  color: #586372;
+}
+
+.theme-light .theme-day-pricing {
+  background: #e9edf0;
+  border-color: rgba(7, 17, 31, 0.12);
+}
+
+.theme-light .theme-day-pricing article:not(:nth-child(2)) {
+  background: #fffdf8;
+  border-color: rgba(7, 17, 31, 0.14);
+}
+
+.theme-light .theme-day-form {
+  background: #f8f5ee;
+  border-color: rgba(178, 132, 30, 0.32);
+}
+
+.theme-light .theme-day-form input,
+.theme-light .theme-day-form select,
+.theme-light .theme-day-form textarea,
+.theme-light .theme-day-form button[data-slot] {
+  color: #172435;
+}
+
+.theme-light .theme-day-notice {
+  background: rgba(255, 253, 248, 0.97);
+  box-shadow: 0 20px 60px rgba(7, 17, 31, 0.18);
+}
+
+.theme-light .theme-day-notice p:first-child {
+  color: #172435;
+}
+
+.theme-light .theme-day-notice p:nth-child(2) {
+  color: #586372;
+}

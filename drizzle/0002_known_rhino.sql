@@ -1,0 +1,1 @@
+ALTER TABLE `transcription_requests` ADD `status` enum('new','in_progress','completed') DEFAULT 'new' NOT NULL;
