@@ -6,7 +6,7 @@ import { isNotificationImportant } from "@shared/notifications";
 import { ArrowLeft, ArrowRight, ArrowUpLeft, Bell, Check, Clock3, FileText, GripVertical, Headphones, History, Instagram, LockKeyhole, Mail, Menu, Calculator, Download, FileUp, MessageCircle, Mic2, Monitor, Moon, Pause, Play, Send, ShieldCheck, Sparkles, Sun, UsersRound, Video, Volume2, VolumeX, X, Zap } from "lucide-react";
 import { useTheme } from "@/contexts/ThemeContext";
 
-const logo = "/manus-storage/transcripta-logo_35056503.png";
+const logo = "/Logo.png";
 const heroImage = "/manus-storage/transcripta-hero_2eca4f66.jpg";
 const processImage = "/manus-storage/transcripta-process_38dd6b0b.jpg";
 const waveformImage = "/manus-storage/transcripta-waveform_f528b9e5.jpg";
